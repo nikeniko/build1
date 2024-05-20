@@ -1,0 +1,11 @@
+body {
+  max-width: auto;
+  background-image: url(/assets/bg.jpg);
+  font: 16px;
+  color: white;
+}
+
+.logo {
+  width: 150px;
+  max-width: auto;
+}
