@@ -12,7 +12,6 @@
 }
 body {
   background-image: url(../img/bg.jpg);
-  width: 100%;
   height: auto;
   max-width: 100%;
   color: white;
@@ -62,7 +61,18 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-.Checkbox {
-  display: inline;
+#Checkbox {
+  display: inline block;
   margin-top: 70px;
+  margin-right: 10px;
+  opacity: 100%;
+}
+
+.divProceed {
+  display: inline-block;
+}
+#labelProceed {
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  display: inline-block;
 }
