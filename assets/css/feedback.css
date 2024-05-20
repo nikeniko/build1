@@ -35,10 +35,13 @@
 .h1Title{
     font-size: 60px;
     font-family: "Outfit", sans-serif;
-    font-weight: 400px;
+    font-weight: 400px,bolder;
+    font: bold;
     margin-bottom:35px ;
 
 }
+
+
   .feedbackform{
     text-align: center;
   }
