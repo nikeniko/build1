@@ -61,11 +61,18 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-#Checkbox {
+#check {
   display: inline block;
   margin-top: 70px;
   margin-right: 10px;
   opacity: 100%;
+}
+
+input[type="checkbox"]:before {
+  appearance: auto;
+  -webkit-appearance: none;
+  background-color: unset;
+  cursor: pointer;
 }
 
 .divProceed {
