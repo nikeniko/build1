@@ -12,11 +12,13 @@
 }
 body {
   background-image: url(/assets/bg.jpg);
-  height: 100%;
   width: 100%;
   max-width: 100%;
   color: white;
   margin: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo {
