@@ -4,14 +4,17 @@
     format(".ttf");
   src: url(/assets/Outfit/static/Outfit-Bold.ttf)
     format(".ttf");
-  font-size: x-large;
+}
+@font-face {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  src: url(/assets/Inter/Inter/Inter-VariableFont_slnt\,wght.ttf)
+    format(".ttf");
 }
 body {
   background-image: url(/assets/bg.jpg);
+  height: 100%;
   width: 100%;
   max-width: 100%;
-  height: auto;
-  font: 16px;
   color: white;
   margin: 80px;
 }
@@ -26,15 +29,17 @@ body {
   font-size: 60px;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 35px;
 }
 
 .strong {
   font-weight: bolder;
-  font-size: 70px;
   font-family: "Outfit", sans-serif;
   font: bold;
 }
 .h6Instruction {
-  font-style: #c2138d;
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  color: #c2138d;
+  margin-bottom: 10px;
 }
