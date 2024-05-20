@@ -1,11 +1,26 @@
+@font-face {
+  font-family: "Outfit";
+  src: url(/assets/Outfit-VariableFont_wght.ttf)
+    format(".ttf");
+}
 body {
-  max-width: auto;
   background-image: url(/assets/bg.jpg);
   font: 16px;
   color: white;
+  margin: 80px;
 }
 
 .logo {
+  margin-bottom: 70px;
   width: 150px;
   max-width: auto;
+}
+
+.h1Welcom {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+}
+
+.strong {
+  font: bold;
 }
