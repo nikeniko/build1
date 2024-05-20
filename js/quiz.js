@@ -1,0 +1,208 @@
+const questions = [
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "What does CPU stand for?",
+    answers: [
+      { text: "Central Processing Unit", correct: true },
+      { text: "Central Process Unit", correct: false },
+      { text: "Central personal Unit", correct: false },
+      { text: "Central Processor Unit", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+    answers: [
+      { text: "Final", correct: true },
+      { text: "Static", correct: false },
+      { text: "Private", correct: false },
+      { text: "Public", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "The logo for Snapchat is a Bell.",
+    answers: [
+      { text: "True", correct: false },
+      { text: "False", correct: true },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question:
+      "Pointers were not used in the original C programming language; they were added later on in C++.",
+    answers: [
+      { text: "True", correct: true },
+      { text: "False", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "What is the most preferred image format used for logos in the Wikimedia database?",
+    answers: [
+      { text: ".svg", correct: true },
+      { text: ".png", correct: false },
+      { text: ".jpeg", correct: false },
+      { text: ".gif", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "In web design, what does CSS stand for?",
+    answers: [
+      { text: "Cascading Style Sheet", correct: true },
+      { text: "Counter Strike: Source", correct: false },
+      { text: "Corrective Style Sheet", correct: false },
+      { text: "Computer Style Sheet", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "What is the code name for the mobile operating system Android 7.0?",
+    answers: [
+      { text: "Nougat", correct: true },
+      { text: "Ice Cream Sandwich", correct: false },
+      { text: "Jelly Bean", correct: false },
+      { text: "Marshmallow", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question: "On Twitter, what is the character limit for a Tweet?",
+    answers: [
+      { text: "140", correct: true },
+      { text: "120", correct: false },
+      { text: "160", correct: false },
+      { text: "100", correct: false },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "easy",
+    question: "Linux was first created as an alternative to Windows XP.",
+    answers: [
+      { text: "True", correct: false },
+      { text: "False", correct: true },
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "easy",
+    question:
+      "Which programming language shares its name with an island in Indonesia?",
+
+    answers: [
+      { text: "Java", correct: true },
+      { text: "Python", correct: false },
+      { text: "C", correct: false },
+      { text: "Jakarta", correct: false },
+    ],
+  },
+];
+
+const questionElement = document.getElementById("question");
+const answerButton = document.getElementById("answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextButton.innerHTML = "Next";
+  nextButton.removeEventListener("click", startQuiz);
+  nextButton.addEventListener("click", handleNextButton);
+  showQuestion();
+}
+
+function showQuestion() {
+  resetState();
+  let currentQuestion = questions[currentQuestionIndex];
+  let questionNo = currentQuestionIndex + 1;
+
+  questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerButton.appendChild(button);
+    if (answer.correct) {
+      button.dataset.correct = answer.correct;
+    }
+    button.addEventListener("click", selectAnswer);
+  });
+}
+
+function resetState() {
+  nextButton.style.display = "none";
+  while (answerButton.firstChild) {
+    answerButton.removeChild(answerButton.firstChild);
+  }
+}
+
+function selectAnswer(e) {
+  const selectedBtn = e.target;
+  const isCorrect = selectedBtn.dataset.correct === "true";
+  if (isCorrect) {
+    selectedBtn.classList.add("correct");
+    score++;
+  } else {
+    selectedBtn.classList.add("incorrect");
+  }
+  Array.from(answerButton.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  nextButton.style.display = "block";
+}
+nextButton.addEventListener("click", () => {
+  if (currentQuestionIndex < question.lenght) {
+    handleNextButton();
+  } else {
+    startQuiz();
+  }
+});
+
+function handleNextButton() {
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+    showQuestion();
+  } else {
+    showScore();
+  }
+}
+function showScore() {
+  resetState();
+  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
+  nextButton.innerHTML = "Play Again";
+  nextButton.style.display = "block";
+  nextButton.removeEventListener("click", handleNextButton);
+  nextButton.addEventListener("click", startQuiz);
+}
+
+startQuiz();
