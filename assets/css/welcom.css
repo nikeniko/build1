@@ -65,39 +65,40 @@ body {
 
 .Checkbox {
   margin-right: 0.5rem;
-    border: 2px solid white;
+  border: 2px solid white;
     appearance: none;
     width: 1rem;
     height: 1rem;
     margin-top: unset;
   }
   
-  .Checkbox:checked {
-    appearance: auto;
-  }
-  
-  .Checkbox:hover {
-    cursor: pointer;
-  }
-  
-  .float-l {
-    float: left;
-  }
-  
-  .ButtonProceed {
-    margin-left: 9rem;
-    background-color: #00FFFF;
-    font-size: 1rem;
+.Checkbox:checked {
+  appearance: auto;
+}
+
+.Checkbox:hover {
+  cursor: pointer;
+}
+
+.float-l {
+  float: left;
+}
+
+.ButtonProceed {
+  margin-left: 9rem;
+  background-color: #00FFFF;
+  font-size: 1rem;
     padding: 0.70rem 2.5rem;
     margin-top: -1rem;
     font-weight: 700;
     border: none;
     box-shadow: 0px 0px 5px #00FFFF,
       0px 0px 20px #00FFFF;
-  }
-  
-  button:hover {
-    box-shadow: 0px 0px 5px #00FFFF,
-      0px 0px 9px #00FFFF;
-    cursor: pointer;
+  text-decoration: none;
+    color: black;
+}
+.ButtonProceed:hover {
+  box-shadow: 0px 0px 5px #00FFFF,
+    0px 0px 9px #00FFFF;
+  cursor: pointer;
 }
