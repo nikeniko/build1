@@ -120,41 +120,37 @@ const questions = [
   },
 ];
 
+// variabili per domande, risposte, prosegui, tempo, risposta corrente, num.totale domande
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-button");
 const nextButton = document.getElementById("next-btn");
 const timerElement = document.getElementById("time");
 const currentQuestionElement = document.querySelector(".current");
 const totalQuestionElement = document.querySelector(".total");
-
+// indice a 0, lo sccore iniziale, tempo e tempo rimanente
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
 let timeLeft = 30;
-
+// il numero totale domande
 totalQuestionElement.textContent = `/${questions.length}`;
-
+// inizializazione quiz, indice domanda 0, score 0, funzione per visualizare prima domanda
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  nextButton.innerHTML = "Next";
-  nextButton.removeEventListener("click", startQuiz);
-  nextButton.addEventListener("click", handleNextButton);
   showQuestion();
 }
-
+// visualizazione domande, resetta l'interfaccia del quiz, mostra la domanda e il numero
 function showQuestion() {
   resetState();
   startTimer();
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
-
   currentQuestionElement.textContent = questionNo;
-
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
+  // funzione per mischiare le l'ordine delle risposte
   shuffleArray(currentQuestion.answers);
-
+  // creà un bottone per ogni risposta
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
@@ -166,14 +162,14 @@ function showQuestion() {
     button.addEventListener("click", selectAnswer);
   });
 }
-
+// funzione per mischiare le l'ordine delle risposte
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
+// nascode il bottone next, rimuove le risposte e resetta il timer
 function resetState() {
   nextButton.style.display = "none";
   while (answerButtonsElement.firstChild) {
@@ -183,7 +179,7 @@ function resetState() {
   timerElement.innerHTML = "30";
   timeLeft = 30;
 }
-
+// stoppa il timer, controlla se le risposte sono corrette lo visualizza come tale e se si aggiunge un punto, prosegue dopo un secondo
 function selectAnswer(e) {
   clearInterval(timer);
   const selectedBtn = e.target;
@@ -204,7 +200,7 @@ function selectAnswer(e) {
     handleNextButton();
   }, 1000);
 }
-
+// inizia il countdown
 function startTimer() {
   timer = setInterval(() => {
     timeLeft--;
@@ -216,7 +212,7 @@ function startTimer() {
     }
   }, 1000);
 }
-
+// fa vedere la risposta corretta disabilita tutti i bottoni e dopo un secondo cambia pagina
 function handleTimeOut() {
   Array.from(answerButtonsElement.children).forEach((button) => {
     if (button.dataset.correct === "true") {
@@ -228,9 +224,9 @@ function handleTimeOut() {
     handleNextButton();
   }, 1000);
 }
-
+//va vedere la domanada che segue
 nextButton.addEventListener("click", handleNextButton);
-
+// e se arriva alla fine va vedere lo score
 function handleNextButton() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -239,13 +235,13 @@ function handleNextButton() {
     showScore();
   }
 }
-
+// e lo score verrà visualizato in questa pagina
 function showScore() {
   window.location.href = "result-page.html";
 }
 
 startQuiz();
-
+// cercio progressivo, timer
 let progressCircle = document.querySelector(".progress");
 let radius = progressCircle.r.baseVal.value;
 let circumference = radius * 2 * Math.PI;
