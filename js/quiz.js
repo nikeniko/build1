@@ -41,8 +41,8 @@ const questions = [
     question:
       "Pointers were not used in the original C programming language; they were added later on in C++.",
     answers: [
-      { text: "True", correct: true },
-      { text: "False", correct: false },
+      { text: "True", correct: false },
+      { text: "False", correct: true },
     ],
   },
   {
@@ -111,7 +111,6 @@ const questions = [
     difficulty: "easy",
     question:
       "Which programming language shares its name with an island in Indonesia?",
-
     answers: [
       { text: "Java", correct: true },
       { text: "Python", correct: false },
@@ -121,49 +120,68 @@ const questions = [
   },
 ];
 
+// variabili per domande, risposte, prosegui, tempo, risposta corrente, num.totale domande
 const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
+const answerButtonsElement = document.getElementById("answer-button");
 const nextButton = document.getElementById("next-btn");
-
+const timerElement = document.getElementById("time");
+const currentQuestionElement = document.querySelector(".current");
+const totalQuestionElement = document.querySelector(".total");
+// indice a 0, lo sccore iniziale, tempo e tempo rimanente
 let currentQuestionIndex = 0;
 let score = 0;
-
+let timer;
+let timeLeft = 30;
+// il numero totale domande
+totalQuestionElement.textContent = `/${questions.length}`;
+// inizializazione quiz, indice domanda 0, score 0, funzione per visualizare prima domanda
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  nextButton.innerHTML = "Next";
-  nextButton.removeEventListener("click", startQuiz);
-  nextButton.addEventListener("click", handleNextButton);
   showQuestion();
 }
-
+// visualizazione domande, resetta l'interfaccia del quiz, mostra la domanda e il numero
 function showQuestion() {
   resetState();
+  startTimer();
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
-
+  currentQuestionElement.textContent = questionNo;
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
+  // funzione per mischiare le l'ordine delle risposte
+  shuffleArray(currentQuestion.answers);
+  // creà un bottone per ogni risposta
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.classList.add("btn");
-    answerButton.appendChild(button);
+    answerButtonsElement.appendChild(button);
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
     button.addEventListener("click", selectAnswer);
   });
 }
-
-function resetState() {
-  nextButton.style.display = "none";
-  while (answerButton.firstChild) {
-    answerButton.removeChild(answerButton.firstChild);
+// funzione per mischiare le l'ordine delle risposte
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
 }
-
+// nascode il bottone next, rimuove le risposte e resetta il timer
+function resetState() {
+  nextButton.style.display = "none";
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
+  clearInterval(timer);
+  timerElement.innerHTML = "30";
+  timeLeft = 30;
+}
+// stoppa il timer, controlla se le risposte sono corrette lo visualizza come tale e se si aggiunge un punto, prosegue dopo un secondo
 function selectAnswer(e) {
+  clearInterval(timer);
   const selectedBtn = e.target;
   const isCorrect = selectedBtn.dataset.correct === "true";
   if (isCorrect) {
@@ -172,37 +190,64 @@ function selectAnswer(e) {
   } else {
     selectedBtn.classList.add("incorrect");
   }
-  Array.from(answerButton.children).forEach((button) => {
+  Array.from(answerButtonsElement.children).forEach((button) => {
     if (button.dataset.correct === "true") {
       button.classList.add("correct");
     }
     button.disabled = true;
   });
-  nextButton.style.display = "block";
-}
-nextButton.addEventListener("click", () => {
-  if (currentQuestionIndex < question.lenght) {
+  setTimeout(() => {
     handleNextButton();
-  } else {
-    startQuiz();
-  }
-});
-
+  }, 1000);
+}
+// inizia il countdown
+function startTimer() {
+  timer = setInterval(() => {
+    timeLeft--;
+    timerElement.textContent = timeLeft;
+    setProgress((timeLeft / 30) * 100);
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      handleTimeOut();
+    }
+  }, 1000);
+}
+// fa vedere la risposta corretta disabilita tutti i bottoni e dopo un secondo cambia pagina
+function handleTimeOut() {
+  Array.from(answerButtonsElement.children).forEach((button) => {
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    }
+    button.disabled = true;
+  });
+  setTimeout(() => {
+    handleNextButton();
+  }, 1000);
+}
+//va vedere la domanada che segue
+nextButton.addEventListener("click", handleNextButton);
+// e se arriva alla fine va vedere lo score
 function handleNextButton() {
-  if (currentQuestionIndex < questions.length - 1) {
-    currentQuestionIndex++;
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
     showScore();
   }
 }
+// e lo score verrà visualizato in questa pagina
 function showScore() {
-  resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play Again";
-  nextButton.style.display = "block";
-  nextButton.removeEventListener("click", handleNextButton);
-  nextButton.addEventListener("click", startQuiz);
+  window.location.href = "result-page.html";
 }
 
 startQuiz();
+// cercio progressivo, timer
+let progressCircle = document.querySelector(".progress");
+let radius = progressCircle.r.baseVal.value;
+let circumference = radius * 2 * Math.PI;
+progressCircle.style.strokeDasharray = circumference;
+
+function setProgress(percent) {
+  progressCircle.style.strokeDashoffset =
+    circumference - (percent / 100) * circumference;
+}
