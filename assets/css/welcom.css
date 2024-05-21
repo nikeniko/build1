@@ -12,6 +12,7 @@
 }
 body {
   background-image: url(../img/bg.jpg);
+  width: auto;
   max-width: 100%;
   color: white;
   margin-left: 80px;

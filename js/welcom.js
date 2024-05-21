@@ -3,6 +3,7 @@ const checkboxApp = document.querySelectorAll(".Checkbox");
 const buttonCheck = document.querySelector(
   ".ButtonProceed"
 );
+// Verifica che la cackBox è stata selezionata
 
 const nextPage = function (event) {
   let isChecked = false;
@@ -15,7 +16,7 @@ const nextPage = function (event) {
     event.preventDefault();
     alert("You must Accept the conditions");
   } else {
-    return (href = "quiz.html");
+    window.location.href = "quiz.html";
   }
 };
 
