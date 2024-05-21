@@ -12,7 +12,7 @@
       format(".ttf");
   }
   body {
-    background-image: url(/assets/bg.jpg);
+    background-image: url(../img/bg.jpg);
     width: 100%;
     max-width: 100%;
     color: white;
