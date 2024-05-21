@@ -28,7 +28,14 @@ body {
   text-align: center;
   font-family: "Inter", "sans-serif";
 }
+
+.starsRating{
+  text-align: center;
+
+}
+
 .star {
+  
   display: inline-block;
 
   width: 50px;
