@@ -31,14 +31,15 @@
     text-align: center;
     font-family: "Inter", "sans-serif";
   }
-
-  .starsRating{
-    text-align: center;
-  }
-
   .star{
-    fill: black;
+    cursor: pointer;
   }
+
+ .star.hovered{
+  fill: #00FFFF;
+ }
+
+ 
 
 .h1Title{
   font-size: 60px;
