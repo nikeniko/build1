@@ -18,15 +18,48 @@ body {
   padding: 80px;
 }
 #timer {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: end;
-  padding-right: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
 }
 
 #time {
-  font-size: 50px;
+  font-family: "Inter", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 70px;
+  color: white;
+}
+#seconds {
+  font-family: "Inter", sans-serif;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: white;
+}
+
+#seconds-remaining {
+  font-family: "Inter", sans-serif;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: white;
+}
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #question {
@@ -68,7 +101,7 @@ body {
   color: #c2138d;
 }
 .track {
-  stroke: rgba(128, 128, 128, 0.281);
+  stroke: rgba(128, 128, 128, 0.308);
   stroke-width: 20;
   fill: none;
 }
@@ -78,4 +111,10 @@ body {
   stroke-width: 20;
   stroke-dasharray: 630;
   stroke-dasharray: 0;
+}
+.correct {
+  background: #9aeabc;
+}
+.incorrect {
+  background: #ff9393;
 }

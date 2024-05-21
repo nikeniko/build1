@@ -200,13 +200,16 @@ function selectAnswer(e) {
     }
     button.disabled = true;
   });
-  nextButton.style.display = "block";
+  setTimeout(() => {
+    handleNextButton();
+  }, 1000);
 }
 
 function startTimer() {
   timer = setInterval(() => {
     timeLeft--;
     timerElement.textContent = timeLeft;
+    setProgress((timeLeft / 30) * 100);
     if (timeLeft === 0) {
       clearInterval(timer);
       handleTimeOut();
@@ -221,7 +224,9 @@ function handleTimeOut() {
     }
     button.disabled = true;
   });
-  nextButton.style.display = "block";
+  setTimeout(() => {
+    handleNextButton();
+  }, 1000);
 }
 
 nextButton.addEventListener("click", handleNextButton);
@@ -236,12 +241,7 @@ function handleNextButton() {
 }
 
 function showScore() {
-  resetState();
-  questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
-  nextButton.innerHTML = "Play Again";
-  nextButton.style.display = "block";
-  nextButton.removeEventListener("click", handleNextButton);
-  nextButton.addEventListener("click", startQuiz);
+  window.location.href = "result-page.html";
 }
 
 startQuiz();
@@ -250,8 +250,6 @@ let progressCircle = document.querySelector(".progress");
 let radius = progressCircle.r.baseVal.value;
 let circumference = radius * 2 * Math.PI;
 progressCircle.style.strokeDasharray = circumference;
-
-setProgress(75);
 
 function setProgress(percent) {
   progressCircle.style.strokeDashoffset =
