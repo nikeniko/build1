@@ -17,9 +17,9 @@ body {
   background-size: cover;
   color: white;
   font-family: Arial, sans-serif;
-  text-align: center;
   padding: 20px;
 }
+
 
 .logo{
     margin-bottom: 70px;
@@ -30,10 +30,14 @@ body {
 .h1Results{
     font-size: 40px;
     padding-bottom: 5px;
+    text-align: center;
+
 }
 
 .summary{
     font-size: 20px;
+    text-align: center;
+
 }
 
 

@@ -3,100 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <title>Exam Results</title>
-    <style>
-      body {
-        background-color: #1a1a40;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-      #container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;
-      }
-      #results {
-        position: relative;
-        width: 300px;
-        height: 300px;
-      }
-      #resultsText {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-      #rateButton {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #fff;
-        color: #1a1a40;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-      }
-    </style>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="chartProva.css" />
+    <script src="chartProva.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
+    <header>
+      <img class="logo" src="assets/img/epicode_logo.png" alt="logo-epicode" />
+    </header>
     <div id="container">
       <h1>Results</h1>
-      <p>The summary of your answers:</p>
+      <p class="summary">The summary of your answers:</p>
+
       <div id="results">
-        <canvas id="resultsCanvas" width="300" height="300"></canvas>
-        <div id="resultsText">
-          <p>Congratulations!<br />You passed the exam.</p>
-          <p>
-            We'll send you the certificate in few minutes.<br />Check your email
-            (including promotions / spam folder)
-          </p>
+        <div class="result-section">
+          <h2>Correct</h2>
+          <h1 id="correctPercentage">0%</h1>
+          <p id="correctAnswers">0/6 questions</p>
+        </div>
+        <div class="result-section">
+          <div id="chart"></div>
+        </div>
+        <div class="result-section">
+          <h2>Wrong</h2>
+          <h1 id="wrongPercentage">0%</h1>
+          <p id="wrongAnswers">0/6 questions</p>
         </div>
       </div>
+      <div id="results">
+        <canvas id="resultsCanvas" width="300" height="300"></canvas>
+        <div id="resultsText"></div>
+      </div>
+
       <button id="rateButton">RATE US</button>
     </div>
-
-    <script>
-      var canvas = document.getElementById("resultsCanvas");
-      var context = canvas.getContext("2d");
-
-      // Draw the correct answers portion
-      context.beginPath();
-      context.arc(150, 150, 100, 0, Math.PI * 1.33);
-      context.lineWidth = 30;
-      context.strokeStyle = "#00e0e0";
-      context.stroke();
-
-      // Draw the wrong answers portion
-      context.beginPath();
-      context.arc(150, 150, 100, Math.PI * 1.33, 0);
-      context.lineWidth = 30;
-      context.strokeStyle = "#e000e0";
-      context.stroke();
-
-      // Draw the inner circle (to create a ring)
-      context.beginPath();
-      context.arc(150, 150, 85, 0, Math.PI * 2);
-      context.fillStyle = "#1a1a40";
-      context.fill();
-
-      // Add correct text
-      context.fillStyle = "#ffffff";
-      context.font = "bold 24px Arial";
-      context.fillText("Correct", 50, 150);
-      context.font = "bold 40px Arial";
-      context.fillText("66.7%", 55, 180);
-      context.font = "bold 16px Arial";
-      context.fillText("4/6 questions", 50, 210);
-
-      // Add wrong text
-      context.font = "bold 24px Arial";
-      context.fillText("Wrong", 200, 150);
-      context.font = "bold 40px Arial";
-      context.fillText("33.3%", 205, 180);
-      context.font = "bold 16px Arial";
-      context.fillText("2/6 questions", 195, 210);
-    </script>
   </body>
 </html>
