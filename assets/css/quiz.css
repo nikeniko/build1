@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Outfit";
+  src: url(../fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
+  src: url(../fonts/assets/Outfit/static/Outfit-Bold.ttf) format(".ttf");
+}
+@font-face {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  src: url(../fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
+}
+body {
+  background-image: url(../img/bg.jpg);
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  color: white;
+  margin: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo {
+  margin-bottom: 70px;
+  width: 150px;
+  max-width: auto;
+}
+
+#question {
+  font-size: 60px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  margin-bottom: 35px;
+  line-height: 45px;
+  text-align: center;
+}
+
+.number {
+  font-weight: bolder;
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.total {
+  font-size: 30px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  color: #c2138d;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+#timer {
+  display: flex;
+  justify-content: end;
+}
