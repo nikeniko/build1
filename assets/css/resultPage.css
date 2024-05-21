@@ -1,5 +1,5 @@
 body {
-    background-image: url(assets/img/bg.jpg);
+    background-image: url(/assets/img/bg.jpg);
     background-size: cover;
     color: white;
     font-family: Arial, sans-serif;
@@ -39,7 +39,8 @@ body {
   .result-section h2 {
     margin: 0;
   }
-  
+
+
   .button {
     background-color: #eaeaea17;
     border: none;
@@ -73,7 +74,13 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+
   }
+
+  .email{
+    font-size:smaller
+  }
+  
   #rateButton {
     margin-top: 20px;
     padding: 10px 20px;

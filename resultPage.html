@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <title>Exam Results</title>
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="chartProva.css" />
-    <script src="chartProva.js"></script>
+    <link rel="stylesheet" href="assets/css/resultPage.css" />
+    <script src="js/resultPage.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
@@ -33,7 +33,10 @@
       </div>
       <div id="results">
         <canvas id="resultsCanvas" width="300" height="300"></canvas>
-        <div id="resultsText"></div>
+        <div id="resultsText">
+          Congratulations! You passed the exam.
+          <p class="email">We'll send you the certificate in few minutes.</p>
+        </div>
       </div>
 
       <button id="rateButton">RATE US</button>
