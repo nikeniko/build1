@@ -3,42 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Result Page</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="result-page.css" />
+    <title>Exam Results</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="result-page2.css" />
   </head>
   <body>
     <header>
-      <div>
-        <img
-          class="logo"
-          src="assets/epicode_logo.png"
-          alt="epicode_logo"
-          width="150"
-        />
-      </div>
+      <img class="logo" src="assets/img/epicode_logo.png" alt="logo-epicode" />
     </header>
+
     <div class="results">
       <h1 class="h1Results">Results</h1>
       <p class="summary">The summary of your answers:</p>
     </div>
-    <div class="answers">
-      <div class="correct">
+
+    <canvas id="donutChart" width="150" height="150"></canvas>
+
+    <div id="results">
+      <div class="result-section">
         <h2>Correct</h2>
+        <h1 id="correctPercentage">0%</h1>
+        <p id="correctAnswers">0/6 questions</p>
       </div>
-      <!-- <div class="donut instalment1"> 
-      <div class="donut-default"></div>
-      <div class="donut-line"></div>
-      <div class="donut-text"></div>
-      <span class="congratulations">Congratulations! You passed the exam</span>
-      <div class="donut-case"></div>
-      </div> -->
-      <div class="wrong">
+      <div class="result-section">
+        <div id="chart"></div>
+      </div>
+      <div class="result-section">
         <h2>Wrong</h2>
+        <h1 id="wrongPercentage">0%</h1>
+        <p id="wrongAnswers">0/6 questions</p>
       </div>
     </div>
-    <div class="rateUs">
-      <button>RATE US</button>
-    </div>
+    <button class="button" onclick="rateUs()">RATE US</button>
+    <script src="script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
+      integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </body>
 </html>
