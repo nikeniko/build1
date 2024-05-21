@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'doughnut',
         data: {
             datasets: [{
-                data: [correctPercentage, wrongPercentage],
+                data: [correctAnswers, wrongAnswers],
                 backgroundColor: ['#00FFFF', '#FF00FF'],
             }],
             labels: ['Correct', 'Wrong']
