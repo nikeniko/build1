@@ -8,15 +8,24 @@
     <title>benchmark</title>
   </head>
   <body>
-    <main id="container">
+    <main>
       <img
         class="logo"
         src="./assets/img/epicode_logo.png"
         alt="epicode_logo"
       />
 
-      <div id="timer">SECONDS <span id="time">30</span> REMAINING</div>
-      <div id="question-container">
+      <div id="timer">
+        <svg width="250" height="250">
+          <circle r="100" cx="125" cy="125" class="track"></circle>
+          <circle r="100" cx="125" cy="125" class="progress"></circle>
+        
+          SECONDS
+        <div id="time">30</div>
+        <div>REMAINING</div>
+      </svg> 
+      </div>
+
         <div id="question">Question</div>
 
         <div id="answer-button">
@@ -31,7 +40,7 @@
     <footer>
       <div class="question-wrapper">
         <div class="number">
-          Question <span class="current">1</span><span class="total">/10</span>
+          QUESTION <span class="current">1 </span><span class="total">/10</span>
         </div>
       </div>
     </footer>

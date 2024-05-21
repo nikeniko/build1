@@ -7,53 +7,75 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
   src: url(../fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
 }
+
 body {
   background-image: url(../img/bg.jpg);
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  color: white;
-  margin: 80px;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: white;
 }
-
 .logo {
-  margin-bottom: 70px;
-  width: 150px;
-  max-width: auto;
-}
-
-#question {
-  font-size: 60px;
-  font-family: "Outfit", sans-serif;
-  font-weight: 400;
-  margin-bottom: 35px;
-  line-height: 45px;
-  text-align: center;
-}
-
-.number {
-  font-weight: bolder;
-  font-family: "Outfit", sans-serif;
-  font-size: 30px;
-  text-align: center;
-}
-
-.total {
-  font-size: 30px;
-  font-family: "Inter", sans-serif;
-  font-weight: bold;
-  color: #c2138d;
-  margin-bottom: 10px;
-  text-align: center;
-}
-.btn {
-  display: flex;
-  justify-content: center;
+  width: 200px;
+  padding: 80px;
 }
 #timer {
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  flex-direction: column;
+  align-items: end;
+  padding-right: 30px;
+}
+
+#time {
+  font-size: 50px;
+}
+
+#question {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Inter", sans-serif;
+  padding: 60px;
+}
+#answer-button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  margin-left: 600px;
+  margin-right: 600px;
+}
+.btn {
+  position: relative;
+  padding: 20px 50px;
+  background: rgba(165, 164, 164, 0.185);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  margin: 5px;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #c2138d, #86116388);
+}
+.number {
+  font-family: "Outfit", sans-serif;
+  text-align: center;
+  padding: 50px;
+  font-size: 22px;
+}
+.total {
+  color: #c2138d;
+}
+.track {
+  stroke: rgba(128, 128, 128, 0.281);
+  stroke-width: 20;
+  fill: none;
+}
+.progress {
+  fill: none;
+  stroke: rgb(46, 200, 228);
+  stroke-width: 20;
+  stroke-dasharray: 630;
+  stroke-dasharray: 0;
 }

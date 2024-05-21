@@ -1,14 +1,11 @@
 @font-face {
   font-family: "Outfit";
-  src: url(../fonts/Outfit/Outfit-VariableFont_wght.ttf)
-    format(".ttf");
-  src: url(../fonts/assets/Outfit/static/Outfit-Bold.ttf)
-    format(".ttf");
+  src: url(../fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
+  src: url(../fonts/assets/Outfit/static/Outfit-Bold.ttf) format(".ttf");
 }
 @font-face {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  src: url(../fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf)
-    format(".ttf");
+  src: url(../fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
 }
 body {
   background-image: url(../img/bg.jpg);
