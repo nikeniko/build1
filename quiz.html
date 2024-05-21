@@ -3,15 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/quiz.css" />
     <title>benchmark</title>
   </head>
   <body>
     <main id="container">
-      <div>logo epicode</div>
-      <div>diagramma a torta</div>
+      <img
+        class="logo"
+        src="./assets/img/epicode_logo.png"
+        alt="epicode_logo"
+      />
+
+      <div id="timer">SECONDS <span id="time">30</span> REMAINING</div>
       <div id="question-container">
         <div id="question">Question</div>
-        <div id="timer">Time left: <span id="time">10</span> seconds</div>
+
         <div id="answer-button">
           <button class="btn">answer 1</button>
           <button class="btn">answer 2</button>
@@ -22,7 +29,11 @@
       </div>
     </main>
     <footer>
-      <div>numero della domanda a qui siamo</div>
+      <div class="question-wrapper">
+        <div class="number">
+          Question <span class="current">1</span><span class="total">/10</span>
+        </div>
+      </div>
     </footer>
     <script src="./js/quiz.js"></script>
   </body>

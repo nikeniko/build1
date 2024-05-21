@@ -41,8 +41,8 @@ const questions = [
     question:
       "Pointers were not used in the original C programming language; they were added later on in C++.",
     answers: [
-      { text: "True", correct: true },
-      { text: "False", correct: false },
+      { text: "True", correct: false },
+      { text: "False", correct: true },
     ],
   },
   {
@@ -111,7 +111,6 @@ const questions = [
     difficulty: "easy",
     question:
       "Which programming language shares its name with an island in Indonesia?",
-
     answers: [
       { text: "Java", correct: true },
       { text: "Python", correct: false },
@@ -125,11 +124,15 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-button");
 const nextButton = document.getElementById("next-btn");
 const timerElement = document.getElementById("time");
+const currentQuestionElement = document.querySelector(".current");
+const totalQuestionElement = document.querySelector(".total");
 
 let currentQuestionIndex = 0;
 let score = 0;
 let timer;
-let timeLeft = 60;
+let timeLeft = 30;
+
+totalQuestionElement.textContent = `/${questions.length}`;
 
 function startQuiz() {
   currentQuestionIndex = 0;
@@ -146,7 +149,11 @@ function showQuestion() {
   let currentQuestion = questions[currentQuestionIndex];
   let questionNo = currentQuestionIndex + 1;
 
+  currentQuestionElement.textContent = questionNo;
+
   questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
+  shuffleArray(currentQuestion.answers);
 
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
@@ -160,14 +167,21 @@ function showQuestion() {
   });
 }
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function resetState() {
   nextButton.style.display = "none";
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
   clearInterval(timer);
-  timerElement.innerHTML = "10";
-  timeLeft = 10;
+  timerElement.innerHTML = "30";
+  timeLeft = 30;
 }
 
 function selectAnswer(e) {
@@ -210,17 +224,11 @@ function handleTimeOut() {
   nextButton.style.display = "block";
 }
 
-nextButton.addEventListener("click", () => {
-  if (currentQuestionIndex < questions.length - 1) {
-    handleNextButton();
-  } else {
-    startQuiz();
-  }
-});
+nextButton.addEventListener("click", handleNextButton);
 
 function handleNextButton() {
-  if (currentQuestionIndex < questions.length - 1) {
-    currentQuestionIndex++;
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
     showScore();
