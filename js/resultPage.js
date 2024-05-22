@@ -22,19 +22,27 @@ document.addEventListener("DOMContentLoaded", function () {
   ).innerText = `${wrongAnswers}/${totalQuestions} questions`;
 
   document.getElementById(
-    "correctPercentageText"
+    "correctPercentage"
   ).innerText = `${correctPercentage.toFixed(1)}% Correct`;
   document.getElementById(
-    "wrongPercentageText"
+    "wrongPercentage"
   ).innerText = `${wrongPercentage.toFixed(1)}% Wrong`;
 
   const correctCircle = document.querySelector(".correct");
   const wrongCircle = document.querySelector(".wrong");
 
-  correctCircle.style.strokeDasharray = `${correctPercentage} ${
-    100 - correctPercentage
+  const radius = 15;
+  const circumference = 2 * Math.PI * radius;
+  const correctLength = (circumference * correctPercentage) / 100;
+  const wrongLength = (circumference * wrongPercentage) / 100;
+
+  correctCircle.style.strokeDasharray = `${correctLength} ${
+    circumference - correctLength
   }`;
-  wrongCircle.style.strokeDasharray = `${wrongPercentage} ${
-    100 - wrongPercentage
+  wrongCircle.style.strokeDasharray = `${wrongLength} ${
+    circumference - wrongLength
   }`;
+});
+document.getElementById("rateButton").addEventListener("click", function () {
+  window.location.href = "feedback";
 });
