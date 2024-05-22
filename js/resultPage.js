@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (correctAnswers < 6) {
     document.getElementById("resultsText").innerText = "NOOB";
   } else {
-    document.getElementById("resultsText").innerText = "Congratulations! You passed the exam.";
+    document.getElementById("resultsText").innerText = "Congratulations! You passed the exam."
   }
 });
 document.getElementById("rateButton").addEventListener("click", function () {
