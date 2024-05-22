@@ -1,15 +1,12 @@
 @font-face {
   font-family: "Outfit";
-  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf)
-    format(".ttf");
-  src: url(..fonts/Outfit/static/Outfit-Bold.ttf)
-    format(".ttf");
+  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
+  src: url(..fonts/Outfit/static/Outfit-Bold.ttf) format(".ttf");
   font-size: x-large;
 }
 @font-face {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf)
-    format(".ttf");
+  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
 }
 
 @font-face {
@@ -118,4 +115,7 @@ textarea {
 button:hover {
   box-shadow: 0px 0px 5px #00ffff, 0px 0px 9px #00ffff;
   cursor: pointer;
+}
+a {
+  text-decoration: none;
 }
