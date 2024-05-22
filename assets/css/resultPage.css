@@ -42,7 +42,7 @@ svg {
 
 .wrong {
   stroke: #c2128d;
-  stroke-dashoffset: 25;
+  stroke-dashoffset: 23.7;
   transition: stroke-dasharray 1s;
 }
 
