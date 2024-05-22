@@ -24,8 +24,8 @@ h2 {
 }
 
 svg {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
 }
 
 .correctWrong {
@@ -36,7 +36,7 @@ svg {
 
 .wrong,
 .correct {
-  stroke-width: 3;
+  stroke-width: 4;
   fill: none;
 }
 
