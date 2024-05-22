@@ -51,8 +51,8 @@ svg {
   stroke-dashoffset: 0;
   transition: stroke-dasharray 1s;
 }
-S .summary {
-  font-size: 20px;
+.summary {
+  font-size: 25px;
   text-align: center;
 }
 
@@ -103,7 +103,8 @@ S .summary {
 }
 
 .email {
-  font-size: smaller;
+  font-size: 12px;
+  padding-top: 6px;
 }
 
 #rateButton {
@@ -123,4 +124,13 @@ S .summary {
   flex-direction: column;
   align-items: center;
   margin: 10px 0;
+}
+.passed {
+  color: rgb(46, 200, 228);
+  font-size: 14px;
+  padding-top: 3px;
+}
+.titolo {
+  font-size: 50px;
+  font-weight: 600;
 }
