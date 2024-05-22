@@ -32,7 +32,3 @@ stars.forEach((star, index) => {
     }
   });
 });
-
-document.getElementById("submit-btn").addEventListener("click", function () {
-  window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
-});
