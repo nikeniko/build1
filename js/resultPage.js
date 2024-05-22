@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }`;
 });
 document.getElementById("rateButton").addEventListener("click", function () {
-  window.location.href = "feedback";
+  window.location.href = "feedback.html";
 });
