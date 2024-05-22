@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "wrongPercentage"
   ).innerText = `${wrongPercentage.toFixed(1)}% `;
 
+  if (correctAnswers < 6) {
+    document.getElementById("resultsText").innerHTML =
+      "<span id='mainMessage'>NOOB</span>";
+  }
+
   const correctCircle = document.querySelector(".correct");
   const wrongCircle = document.querySelector(".wrong");
 
@@ -46,3 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("rateButton").addEventListener("click", function () {
   window.location.href = "feedback.html";
 });
+if (correctAnswers < 6) {
+  document.getElementById("resultsText").innerHTML =
+    "<span id='mainMessage'>NOOB</span>";
+}
