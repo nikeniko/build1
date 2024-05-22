@@ -25,14 +25,14 @@ stars.forEach((star, index) => {
 
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
-    
     stars.forEach((s) => s.classList.remove("selected"));
-    
-    
+
     for (let i = 0; i <= index; i++) {
       stars[i].classList.add("selected");
     }
   });
 });
 
-
+document.getElementById("submit-btn").addEventListener("click", function () {
+  window.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0";
+});
