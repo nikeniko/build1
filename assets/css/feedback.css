@@ -1,12 +1,15 @@
 @font-face {
   font-family: "Outfit";
-  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
-  src: url(..fonts/Outfit/static/Outfit-Bold.ttf) format(".ttf");
+  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf)
+    format(".ttf");
+  src: url(..fonts/Outfit/static/Outfit-Bold.ttf)
+    format(".ttf");
   font-size: x-large;
 }
 @font-face {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
+  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf)
+    format(".ttf");
 }
 
 @font-face {
@@ -25,6 +28,7 @@ body {
   background-position: center;
   height: auto;
   min-height: 150px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .logo {
@@ -34,20 +38,16 @@ body {
 }
 
 .Pfrom {
-  font-size: 20px ;
-  font-family: "Inter", "sans-serif";
-
+  font-size: 20px;
 }
 
 .feedback-container {
   text-align: center;
-  font-family: "Inter", "sans-serif";
   margin-bottom: 15px;
 }
 
-.starsRating{
+.starsRating {
   text-align: center;
-
 }
 
 .star {
@@ -64,7 +64,6 @@ body {
 
 .h1Title {
   font-size: 60px;
-  font-family: "Inter", sans-serif;
   font-weight: 400;
   margin-bottom: 35px;
   line-height: 45px;
@@ -77,7 +76,6 @@ body {
 
 .feedbackform {
   text-align: center;
-  font-family: "Inter", "sans-serif";
   margin-top: 15px;
   font-size: 20px;
 }
@@ -95,15 +93,11 @@ textarea {
   color: white;
   outline: none;
   resize: none;
-  font-family: "Inter", "sans-serif";
   font-size: 16px;
   word-spacing: 0px;
   line-height: 1px;
   margin-top: 2rem;
 }
-
-
-  
 
 .submit-btn {
   display: block;
