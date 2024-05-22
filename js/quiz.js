@@ -237,7 +237,7 @@ function handleNextButton() {
 }
 // e lo score verrà visualizato in questa pagina
 function showScore() {
-  window.location.href = "result-page.html";
+  window.location.href = "resultPage.html";
 }
 
 startQuiz();
