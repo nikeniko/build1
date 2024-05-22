@@ -237,6 +237,8 @@ function handleNextButton() {
 }
 // e lo score verrà visualizato in questa pagina
 function showScore() {
+  localStorage.setItem("score", score);
+  localStorage.setItem("totalQuestions", questions.length);
   window.location.href = "resultPage.html";
 }
 

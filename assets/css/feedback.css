@@ -1,59 +1,123 @@
 @font-face {
-    font-family: "Outfit";
-    src: url(/assets/Outfit/Outfit-VariableFont_wght.ttf)
-      format(".ttf");
-    src: url(/assets/Outfit/static/Outfit-Bold.ttf)
-      format(".ttf");
-    font-size: x-large;
-  }
-  @font-face {
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    src: url(/assets/Inter/Inter/Inter-VariableFont_slnt\,wght.ttf)
-      format(".ttf");
-  }
-  body {
-    background-image: url(/assets/bg.jpg);
-    width: 100%;
-    max-width: 100%;
-    color: white;
-    margin: 80px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .logo {
-    margin-bottom: 70px;
-    width: 150px;
-    max-width: auto;
-  }
-  .feedback-container {
-    text-align: center;
+  font-family: "Outfit";
+  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
+  src: url(..fonts/Outfit/static/Outfit-Bold.ttf) format(".ttf");
+  font-size: x-large;
+}
+@font-face {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
+}
 
+@font-face {
+  font-family: "Static", Arial, Helvetica, sans-serif;
+  src: url(../fonts/static/Teachers-Bold.ttf) format(".ttf");
+}
 
-  }
-.h1Title{
-    font-size: 60px;
-    font-family: "Outfit", sans-serif;
-    font-weight: 400px;
-    margin-bottom:35px ;
+body {
+  background-image: url(../img/bg.jpg);
+  width: auto;
+  max-width: 100%;
+  color: white;
+  margin: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  min-height: 150px;
+}
+
+.logo {
+  margin-bottom: 70px;
+  width: 150px;
+  max-width: auto;
+}
+
+.Pfrom {
+  font-size: 20px ;
+  font-family: "Inter", "sans-serif";
 
 }
-  .feedbackform{
-    text-align: center;
-  }
-  textarea{
-    margin: 20px auto;
-    padding: 10 px;
-    display: block;
-    width: 80%;
-    background: none;
-    border-radius: 5px;
-    border: 1px ;
-    color: white;
-    border-left: 0
-    ;
 
-  }
+.feedback-container {
+  text-align: center;
+  font-family: "Inter", "sans-serif";
+  margin-bottom: 15px;
+}
+
+.starsRating{
+  text-align: center;
+
+}
+
+.star {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 2px;
+  cursor: pointer;
+}
+.hovered path,
+.star.selected path {
+  fill: #00ffff;
+}
+
+.h1Title {
+  font-size: 60px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  margin-bottom: 35px;
+  line-height: 45px;
+}
+
+.TitoloH1 {
+  font-weight: bolder;
+  font-family: "Outfit", sans-serif;
+}
+
+.feedbackform {
+  text-align: center;
+  font-family: "Inter", "sans-serif";
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.containerTextarea {
+  text-align: center;
+}
+
+textarea {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #c2138d;
+  background: none;
+  color: white;
+  outline: none;
+  resize: none;
+  font-family: "Inter", "sans-serif";
+  font-size: 16px;
+  word-spacing: 0px;
+  line-height: 1px;
+  margin-top: 2rem;
+}
+
 
   
+
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #00ffff;
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin-top: 30px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0px 0px 5px #00ffff, 0px 0px 20px #00ffff;
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px #00ffff, 0px 0px 9px #00ffff;
+  cursor: pointer;
+}

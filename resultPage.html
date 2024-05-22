@@ -5,8 +5,6 @@
     <title>Exam Results</title>
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/resultPage.css" />
-    <script src="js/resultPage.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header>
@@ -18,33 +16,54 @@
         <p class="summary">The summary of your answers:</p>
       </div>
 
-      <div id="results">
-        <div class="result-section">
+      <div class="result-section">
+        <div class="correctWrong">
           <h2>Correct</h2>
           <h1 id="correctPercentage">0%</h1>
           <p id="correctAnswers">0/6 questions</p>
         </div>
         <div class="result-section">
-          <div id="chart">
-            <div id="results">
-              <canvas id="resultsCanvas" width="300" height="300"></canvas>
-              <div id="resultsText">
-                Congratulations! You passed the exam.
-                <p class="email">
-                  We'll send you the certificate in few minutes.
-                </p>
-              </div>
+          <div id="results">
+            <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+              <circle
+                class="donut-hole"
+                cx="21"
+                cy="21"
+                r="15"
+                fill="transparent"
+              ></circle>
+              <circle
+                class="donut-ring"
+                cx="21"
+                cy="21"
+                r="15"
+                fill="transparent"
+                stroke="rgb(46, 200, 228)"
+                ;
+                stroke-width="3"
+              ></circle>
+              <circle class="correct" cx="21" cy="21" r="15"></circle>
+              <circle class="wrong" cx="21" cy="21" r="15"></circle>
+            </svg>
+            <div id="resultsText">
+              Congratulations! You passed the exam.
+              <p class="email">
+                We'll send you the certificate in few minutes.
+              </p>
             </div>
           </div>
         </div>
         <div class="result-section">
-          <h2>Wrong</h2>
-          <h1 id="wrongPercentage">0%</h1>
-          <p id="wrongAnswers">0/6 questions</p>
+          <div class="correctWrong">
+            <h2>Wrong</h2>
+            <h1 id="wrongPercentage">0%</h1>
+            <p id="wrongAnswers">0/6 questions</p>
+          </div>
         </div>
       </div>
 
       <button id="rateButton">RATE US</button>
     </div>
+    <script src="./js/resultPage.js"></script>
   </body>
 </html>
