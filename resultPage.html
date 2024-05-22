@@ -5,8 +5,6 @@
     <title>Exam Results</title>
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/resultPage.css" />
-    <script src="js/resultPage.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <header>
@@ -18,22 +16,22 @@
         <p class="summary">The summary of your answers:</p>
       </div>
 
-      <div id="results">
+      <div class="result-section">
+        <h2>Correct</h2>
+        <h1 id="correctPercentage">0%</h1>
+        <p id="correctAnswers">0/6 questions</p>
+
         <div class="result-section">
-          <h2>Correct</h2>
-          <h1 id="correctPercentage">0%</h1>
-          <p id="correctAnswers">0/6 questions</p>
-        </div>
-        <div class="result-section">
-          <div id="chart">
-            <div id="results">
-              <canvas id="resultsCanvas" width="300" height="300"></canvas>
-              <div id="resultsText">
-                Congratulations! You passed the exam.
-                <p class="email">
-                  We'll send you the certificate in few minutes.
-                </p>
-              </div>
+          <div id="results">
+            <svg width="250" height="250">
+              <circle r="100" cx="125" cy="125" class="wrong"></circle>
+              <circle r="100" cx="125" cy="125" class="correct"></circle>
+            </svg>
+            <div id="resultsText">
+              Congratulations! You passed the exam.
+              <p class="email">
+                We'll send you the certificate in few minutes.
+              </p>
             </div>
           </div>
         </div>
@@ -46,5 +44,6 @@
 
       <button id="rateButton">RATE US</button>
     </div>
+    <script src="./js/resultPage.js"></script>
   </body>
 </html>
