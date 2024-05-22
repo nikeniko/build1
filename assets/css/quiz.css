@@ -76,6 +76,7 @@ svg {
   padding: 10px;
   margin-left: 600px;
   margin-right: 600px;
+  
 }
 .btn {
   position: relative;
@@ -86,8 +87,9 @@ svg {
   cursor: pointer;
   border-radius: 40px;
   margin: 5px;
+  font-weight: 600;
+    border-width: 3px;
 }
-
 .btn:hover {
   background: linear-gradient(135deg, #c2138d, #86116388);
 }
