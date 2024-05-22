@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById(
     "correctPercentage"
-  ).innerText = `${correctPercentage.toFixed(1)}% Correct`;
+  ).innerText = `${correctPercentage.toFixed(1)}% `;
   document.getElementById(
     "wrongPercentage"
-  ).innerText = `${wrongPercentage.toFixed(1)}% Wrong`;
+  ).innerText = `${wrongPercentage.toFixed(1)}% `;
 
   const correctCircle = document.querySelector(".correct");
   const wrongCircle = document.querySelector(".wrong");
