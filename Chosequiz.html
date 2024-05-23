@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/Chosequiz.css" />
+    <title>Quiz App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="start-screen">
+        <h1 class="heading">Choose Quiz</h1>
+        <div class="settings">
+          <label for="num-questions">Number of Questions</label>
+          <select id="num-questions">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+          </select>
+          <label for="category">Select Category</label>
+          <select id="category">
+            <option value="9">General Knowledge</option>
+            <option value="12">Music</option>
+            <option value="11">Film</option>
+            <option value="14">Television</option>
+            <option value="15">Video Games</option>
+            <option value="18">Computers</option>
+          </select>
+          <label for="difficulty">Select Difficulty</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <label for="time">Select time per question</label>
+          <select id="time">
+            <option value="10">10 seconds</option>
+            <option value="20">20 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="40">40 seconds</option>
+            <option value="50">50 seconds</option>
+            <option value="60">60 seconds</option>
+          </select>
+        </div>
+        <button class="btn-start">Start quiz</button>
+      </div>
+    </div>
+    <script src="./js/Chosequiz.js"></script>
+  </body>
+</html>
