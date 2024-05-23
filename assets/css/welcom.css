@@ -79,6 +79,7 @@ body {
 
 .Checkbox:checked {
   appearance: auto;
+  accent-color: #c2138d;
 }
 
 .Checkbox:hover {
