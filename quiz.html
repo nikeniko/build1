@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/quiz.css" />
-    <title>quiz</title>
-  </head>
-  <body>
-    <main>
-      <img
-        class="logo"
-        src="./assets/img/epicode_logo.png"
-        alt="epicode_logo"
-      />
-      <!--logo epicode-->
 
-      <div id="timer">
-        <!--contdown di 30 secondi-->
-        <svg width="250" height="250">
-          <circle r="100" cx="125" cy="125" class="track"></circle>
-          <circle r="100" cx="125" cy="125" class="progress"></circle>
-        </svg>
-        <!--cerchi per il timer progressivo-->
-        <div id="seconds">SECONDS</div>
-        <div id="time">30</div>
-        <div id="seconds-remaining">REMAINING</div>
-      </div>
-      <div id="question">Question</div>
-      <!--domande-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/quiz.css" />
+  <title>quiz</title>
+</head>
 
-      <div id="answer-button">
-        <!--bottoni per le risposte-->
-        <button class="btn">answer 1</button>
-        <button class="btn">answer 2</button>
-        <button class="btn">answer 3</button>
-        <button class="btn">answer 4</button>
+<body>
+  <main>
+    <img class="logo" src="./assets/img/epicode_logo.png" alt="epicode_logo" />
+    <!--logo epicode-->
+
+    <div id="timer">
+      <!--contdown di 30 secondi-->
+      <svg width="250" height="250">
+        <circle r="100" cx="125" cy="125" class="track"></circle>
+        <circle r="100" cx="125" cy="125" class="progress"></circle>
+      </svg>
+      <!--cerchi per il timer progressivo-->
+      <div id="seconds">SECONDS</div>
+      <div id="time">30</div>
+      <div id="seconds-remaining">REMAINING</div>
+    </div>
+    <div id="question">Question</div>
+    <!--domande-->
+
+    <div id="answer-button">
+      <!--bottoni per le risposte-->
+      <button class="btn">answer 1</button>
+      <button class="btn">answer 2</button>
+      <button class="btn">answer 3</button>
+      <button class="btn">answer 4</button>
+    </div>
+    <button id="next-btn">Next</button><!--bottone per andare avanti (nascosto)-->
+  </main>
+  <footer>
+    <div class="question-wrapper">
+      <div class="number">
+        QUESTION <span class="current">1 </span><span class="total">/10</span>
+        <!--numero della domanda in qui siamo-->
       </div>
-      <button id="next-btn">Next</button
-      ><!--bottone per andare avanti (nascosto)-->
-    </main>
-    <footer>
-      <div class="question-wrapper">
-        <div class="number">
-          QUESTION <span class="current">1 </span><span class="total">/10</span>
-          <!--numero della domanda in qui siamo-->
-        </div>
-      </div>
-    </footer>
-    <script src="./js/quiz.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="./js/quiz.js"></script>
+</body>
+
 </html>

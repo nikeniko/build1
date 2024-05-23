@@ -23,10 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById(
     "correctPercentage"
-  ).innerText = `${correctPercentage.toFixed(1)}% Correct`;
+  ).innerText = `${correctPercentage.toFixed(1)}% `;
   document.getElementById(
     "wrongPercentage"
-  ).innerText = `${wrongPercentage.toFixed(1)}% Wrong`;
+  ).innerText = `${wrongPercentage.toFixed(1)}% `;
+
+  if (correctAnswers < 6) {
+    document.getElementById("resultsText").innerHTML =
+      "<span id='mainMessage'>NOOB</span>";
+  }
 
   const correctCircle = document.querySelector(".correct");
   const wrongCircle = document.querySelector(".wrong");
@@ -53,3 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("rateButton").addEventListener("click", function () {
   window.location.href = "feedback.html";
 });
+if (correctAnswers < 6) {
+  document.getElementById("resultsText").innerHTML =
+    "<span id='mainMessage'>NOOB</span>";
+}
