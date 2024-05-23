@@ -121,10 +121,11 @@ svg {
   stroke-width: 20;
   stroke-dasharray: 630;
   stroke-dasharray: 0;
+  stroke-dashoffset: 23.7;
 }
 .correct {
   background: #9aeabc;
 }
 .incorrect {
-  background: #ff9393;
+  background: #b42828;
 }
