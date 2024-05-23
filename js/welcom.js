@@ -1,8 +1,6 @@
 const checkboxApp = document.querySelectorAll(".Checkbox");
 
-const buttonCheck = document.querySelector(
-  ".ButtonProceed"
-);
+const buttonCheck = document.querySelector(".ButtonProceed");
 
 // Verifica che la cackBox è stata selezionata, se non lo fosse esegue un messaggio di allert,
 // Se invece lo è prosegue con la pagina di riferimento
@@ -18,7 +16,7 @@ const nextPage = function (event) {
     event.preventDefault();
     alert("You must Accept the conditions");
   } else {
-    window.location.href = "quiz.html";
+    window.location.href = "Chosequiz.html";
   }
 };
 
