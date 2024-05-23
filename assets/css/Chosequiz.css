@@ -5,12 +5,24 @@
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: azure;
+  background-image: url(../img/bg.jpg);
+  width: auto;
+  max-width: 100%;
+  color: white;
+  margin: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  min-height: 150px;
 }
+
+.logo {
+  margin-bottom: 70px;
+  width: 150px;
+  max-width: auto;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -20,18 +32,25 @@ body {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+  margin: auto;
+ 
 }
+
+
+
 .heading {
   text-align: center;
   font-size: 40px;
   color: #fff;
   margin-bottom: 50px;
+  font-family: "Outfit", sans-serif;
 }
 label {
   display: block;
   font-size: 12px;
   margin-bottom: 10px;
   color: #fff;
+  font-family: "Outfit", sans-serif;
 }
 select {
   width: 100%;
@@ -42,25 +61,26 @@ select {
   background-color: #fff;
   color: rgb(51, 35, 109);
   font-size: 14px;
+  font-family: "Outfit", sans-serif;
 }
 .btn-start {
   width: 100%;
   height: 60px;
-  background-color: aqua;
+  background-color: #c2138d;
   border: none;
   border-radius: 10px;
   color: #fff;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.4s linear;
+  transition: all 0.2s linear;
 }
 .btn-start:hover {
-  background-color: rgb(44, 185, 185);
+  background-color: #9b49ca;
 }
 .btn-start:disabled {
   cursor: not-allowed;
-  background-color: #576081;
+  background-color: #6f219c;
 }
 .hide {
   display: none;
