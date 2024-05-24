@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/feedback.css" />
-    <title>Feedback</title>
-  </head>
 
-  <body>
-    <header>
-      <img class="logo" src="./assets/img/epicode_logo.png" alt="logo" />
-    </header>
-    <main class="main1">
-      <div class="feedback-container">
-        <h1 class="h1Title">
-          <strong class="TitoloH1">Tell us how it's going</strong>
-        </h1>
-        <p class="Pfrom">
-          From 0 to 10, how likely are you to recommend EPICODE<br /><br />
-          to a friend or a colleague?
-        </p>
-      </div>
-      <div class="starsRating"></div>
-      <div class="containerTextarea">
-        <p class="feedbackform">
-          Leave us an open feedback about your experience so far
-        </p>
-        <textarea
-          class="writeYourComment"
-          placeholder="Write your comment here"
-        ></textarea>
-        <br />
-        <a href="//www.youtube.com/watch?v=xvFZjo5PgG0"
-          ><button class="submit-btn">SUBMIT FEEDBACK</button></a
-        >
-      </div>
-    </main>
-    <script src="./js/feedback.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/feedback.css" />
+  <title>Feedback</title>
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="./assets/img/epicode_logo.png" alt="logo" />
+  </header>
+  <main class="main1">
+    <div class="feedback-container">
+      <h1 class="h1Title">
+        <strong class="TitoloH1">Tell us how it's going</strong>
+      </h1>
+      <p class="Pfrom">
+        From 0 to 10, how likely are you to recommend EPICODE<br /><br />
+        to a friend or a colleague?
+      </p>
+    </div>
+    <div class="starsRating"></div>
+    <div class="containerTextarea">
+      <p class="feedbackform">
+        Leave us an open feedback about your experience so far
+      </p>
+      <textarea class="writeYourComment" placeholder="Write your comment here"></textarea>
+      <br />
+      <a href="//www.youtube.com/watch?v=xvFZjo5PgG0"><button class="submit-btn">SUBMIT FEEDBACK</button></a>
+    </div>
+    <div class="popup">
+      <img src="./assets/img/acegif-com-sweating-44.gif">
+      <h2 class="h2PopUp">We're sorry you didn't like it</h2>
+      <button id="buttonPopup" type="button">OK</button>
+    </div>
+  </main>
+  <script src="./js/feedback.js"></script>
+</body>
+
 </html>

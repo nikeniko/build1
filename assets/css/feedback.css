@@ -1,15 +1,18 @@
-*{
+* {
   box-sizing: border-box;
 }
 @font-face {
   font-family: "Outfit";
-  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf) format(".ttf");
-  src: url(..fonts/Outfit/static/Outfit-Bold.ttf) format(".ttf");
+  src: url(..fonts/Outfit/Outfit-VariableFont_wght.ttf)
+    format(".ttf");
+  src: url(..fonts/Outfit/static/Outfit-Bold.ttf)
+    format(".ttf");
   font-size: x-large;
 }
 @font-face {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf) format(".ttf");
+  src: url(..fonts/Inter/Inter/Inter-VariableFont_slnt\wght.ttf)
+    format(".ttf");
 }
 
 @font-face {
@@ -29,7 +32,7 @@ body {
   min-height: 100vh;
 }
 
-.main1{
+.main1 {
   margin-top: 2rem;
 }
 
@@ -107,7 +110,6 @@ textarea {
   line-height: 4px;
   margin-top: 1rem;
   font-family: "Outfit", sans-serif;
-
 }
 
 .submit-btn {
@@ -129,4 +131,51 @@ button:hover {
 }
 a {
   text-decoration: none;
+}
+
+.popup {
+  width: 600px;
+  background-image: url(../img/bg.jpg);
+  border-radius: 6px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0px, 30px, 30px;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.open-popup {
+  visibility: visible;
+  top: 70%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  padding-top: 100px;
+  width: 600px;
+  border-radius: 10px;
+  margin-top: -50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 500;
+  margin: 50px 0 10px;
+}
+
+.popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 30px 0;
+  background: #c2138d;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
