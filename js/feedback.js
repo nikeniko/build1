@@ -4,16 +4,13 @@ const starSVG = `
 </svg>`;
 
 const starRatingContainer = document.querySelector(".starsRating");
-const img = document.createElement("img"); 
+const img = document.createElement("img");
 
+function setEmoji(emoji) {
+  img.src = `../assets/img/emojisFeedback/${emoji}.png`;
 
-function setEmoji (emoji) {
+  const src = document.getElementById("emojis");
 
-  
-  img.src =`../assets/img/emojisFeedback/${emoji}.png`;
-    
-  const src = document.getElementById("emojis") ;
-    
   src.appendChild(img);
 }
 for (let i = 0; i < 10; i++) {
@@ -36,7 +33,6 @@ stars.forEach((star, index) => {
 
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
-  
     stars.forEach((s) => s.classList.remove("selected"));
 
     for (let i = 0; i <= index; i++) {
@@ -45,21 +41,17 @@ stars.forEach((star, index) => {
     for (let i = 0; i <= index; i++) {
       stars[i].classList.add("selected");
     }
-    
+
     let rating = index + 1;
 
-    if (rating >= 1 && rating <= 2) {
+    if (rating >= 1 && rating <= 6) {
+      setEmoji("not_good");
+    } else if (rating >= 7 && rating <= 8) {
       setEmoji("not_good_atall");
-      
-    } else if (rating >= 3 && rating <= 5) {
-        setEmoji("not_good");
-      
-    } else if (rating >= 6 && rating <= 8) {
-       setEmoji("i_like_it");
-      
-    } else if (rating >= 9 && rating <= 10) {
+    } else if (rating >= 9 && rating <= 9) {
+      setEmoji("i_like_it");
+    } else if (rating >= 10 && rating <= 10) {
       setEmoji("i_loveit");
     }
   });
 });
-
