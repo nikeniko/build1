@@ -36,29 +36,42 @@ stars.forEach((star, index) => {
     }
 
     let rating = index + 1;
-    let popup = document.querySelectorAll(".popup");
-    console.log(popup);
+    // Selezione Div - PopUP
+    let popupUno = document.querySelector(".popupUno");
+    let popupDue = document.querySelector(".popupDue");
+    let popupTre = document.querySelector(".popupTre");
 
-    let buttonp = document.getElementById("buttonPopup");
-    buttonp.addEventListener("click", closePopup);
+    // Bottoni per chiudere i PopUP
 
-    function openPopup() {
-      popup.forEach((popup) => {
-        popup.classList.add("open-popup");
-      });
+    let buttonp1 = document.getElementById("buttonPopup1");
+    buttonp1.addEventListener("click", closePopup);
+    let buttonp2 = document.getElementById("buttonPopup2");
+    buttonp2.addEventListener("click", closePopup);
+    let buttonp3 = document.getElementById("buttonPopup3");
+    buttonp3.addEventListener("click", closePopup);
+
+    function openPopup1() {
+      popupUno.classList.add("open-popup");
     }
-    function closePopup() {
-      popup.forEach((popup) => {
-        popup.classList.remove("open-popup");
-      });
+
+    function openPopup2() {
+      popupDue.classList.add("open-popup");
+    }
+    function openPopup3() {
+      popupTre.classList.add("open-popup");
+    }
+    function closePopup(event) {
+      event.target
+        .closest(".popup")
+        .classList.remove("open-popup");
     }
 
     if (rating >= 1 && rating <= 6) {
-      openPopup();
+      openPopup1();
     } else if (rating >= 7 && rating <= 8) {
-      rating.addEventListener("click", openPopup);
+      openPopup2();
     } else if (rating >= 9 && rating <= 10) {
-      rating.addEventListener("click", openPopup);
+      openPopup3();
     }
   });
 });
