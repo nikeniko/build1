@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
 }
 @font-face {
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
 }
 
-.main1{
+.main1 {
   margin-top: 2rem;
 }
 
@@ -107,20 +107,20 @@ textarea {
   line-height: 4px;
   margin-top: 1rem;
   font-family: "Outfit", sans-serif;
-
 }
-#emojis{
+#emojis {
+  padding: 10px;
   z-index: 100;
   text-align: center;
   position: relative;
 }
-#emojis img{
+#emojis img {
   width: 3rem;
   height: 3rem;
   position: absolute;
   top: 55%;
   left: 50%;
-  transform:translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .submit-btn {
   display: block;
