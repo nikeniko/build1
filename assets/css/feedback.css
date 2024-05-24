@@ -109,7 +109,19 @@ textarea {
   font-family: "Outfit", sans-serif;
 
 }
-
+#emojis{
+  z-index: 100;
+  text-align: center;
+  position: relative;
+}
+#emojis img{
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+}
 .submit-btn {
   display: block;
   margin: 0 auto;

@@ -4,7 +4,18 @@ const starSVG = `
 </svg>`;
 
 const starRatingContainer = document.querySelector(".starsRating");
+const img = document.createElement("img"); 
 
+
+function setEmoji (emoji) {
+
+  
+  img.src =`../assets/img/emojisFeedback/${emoji}.png`;
+    
+  const src = document.getElementById("emojis") ;
+    
+  src.appendChild(img);
+}
 for (let i = 0; i < 10; i++) {
   starRatingContainer.innerHTML += starSVG;
 }
@@ -25,6 +36,7 @@ stars.forEach((star, index) => {
 
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
+  
     stars.forEach((s) => s.classList.remove("selected"));
 
     for (let i = 0; i <= index; i++) {
@@ -33,15 +45,21 @@ stars.forEach((star, index) => {
     for (let i = 0; i <= index; i++) {
       stars[i].classList.add("selected");
     }
-
+    
     let rating = index + 1;
 
-    if (rating >= 1 && rating <= 3) {
-      alert("We're sorry to hear that your experience wasn't satisfactory. We'll strive to improve.");
-    } else if (rating >= 4 && rating <= 7) {
-      alert("Thank you for your feedback. We appreciate your opinion and will do our best to improve.");
-    } else if (rating >= 8 && rating <= 10) {
-      alert("Thank you for your positive feedback! We're glad you had a pleasant experience.");
+    if (rating >= 1 && rating <= 2) {
+      setEmoji("not_good_atall");
+      
+    } else if (rating >= 3 && rating <= 5) {
+        setEmoji("not_good");
+      
+    } else if (rating >= 6 && rating <= 8) {
+       setEmoji("i_like_it");
+      
+    } else if (rating >= 9 && rating <= 10) {
+      setEmoji("i_loveit");
     }
   });
 });
+
