@@ -16,6 +16,7 @@ body {
   color: white;
 }
 .logo {
+  display: flex;
   width: 200px;
   padding: 80px;
 }
